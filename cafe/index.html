@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Prism Café – Fresh pizza, handcrafted juices, and dreamy café vibes. Experience a cinematic aesthetic café online." />
+  <title>Prism Café – Aesthetic Food Experience</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ─── NAV ─── -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="logo" aria-label="Prism Café Home">
+        <span class="logo-prism">Prism</span><span class="logo-cafe">Café</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#menu" class="nav-link">Menu</a></li>
+        <li><a href="#drinks" class="nav-link">Drinks</a></li>
+        <li><a href="#specials" class="nav-link">Specials</a></li>
+        <li><a href="#order" class="nav-link nav-cta" id="orderNowBtn">Order Now</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ─── HERO ─── -->
+  <section class="hero" id="hero">
+    <canvas class="hero-canvas" id="heroCanvas"></canvas>
+    <div class="prism-beams" aria-hidden="true">
+      <div class="beam beam-1"></div>
+      <div class="beam beam-2"></div>
+      <div class="beam beam-3"></div>
+    </div>
+    <div class="hero-particles" id="heroParticles" aria-hidden="true"></div>
+
+    <div class="hero-content">
+      <p class="hero-eyebrow">✦ Welcome to the Experience ✦</p>
+      <h1 class="hero-title">
+        Aesthetic<br /><em>Café Experience</em>
+      </h1>
+      <p class="hero-sub">Fresh pizza, handcrafted juices, and dreamy café vibes.</p>
+      <div class="hero-actions">
+        <a href="#menu" class="btn btn-primary">Explore Menu</a>
+        <a href="#specials" class="btn btn-ghost">Our Specials</a>
+      </div>
+    </div>
+
+    <div class="hero-scroll-hint" aria-hidden="true">
+      <span>Scroll to explore</span>
+      <div class="scroll-line"></div>
+    </div>
+
+    <!-- Pizza hero visual -->
+    <div class="hero-pizza-wrap" id="heroPizzaWrap">
+      <div class="pizza-glow" aria-hidden="true"></div>
+      <div class="hero-pizza-real">
+        <img src="img/pizza_volcano.png" alt="Volcano Cheese Pizza" class="hero-pizza-img" id="heroPizzaImg" />
+        <div class="pizza-shimmer-overlay" aria-hidden="true"></div>
+      </div>
+      <div class="steam-container" id="steamContainer" aria-hidden="true">
+        <div class="steam s1"></div>
+        <div class="steam s2"></div>
+        <div class="steam s3"></div>
+        <div class="steam s4"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── PIZZA SECTION ─── -->
+  <section class="pizza-section" id="pizza">
+    <div class="section-header">
+      <p class="section-eyebrow">Freshly Baked</p>
+      <h2 class="section-title">Our <em>Signature Pizzas</em></h2>
+      <p class="section-sub">Hand-stretched dough, premium toppings, cheese that stretches forever.</p>
+    </div>
+
+    <div class="pizza-showcase">
+      <div class="pizza-main-display">
+        <div class="pizza-real-wrap" id="pizzaRealWrap">
+          <img src="img/pizza_volcano.png" alt="Pizza" class="pizza-real-img" id="pizzaRealImg" />
+          <div class="pizza-spin-ring" aria-hidden="true"></div>
+          <div class="cheese-drip-container" id="cheeseDrips" aria-hidden="true"></div>
+        </div>
+        <div class="steam-container steam-lg" id="steamLg" aria-hidden="true">
+          <div class="steam s1"></div><div class="steam s2"></div><div class="steam s3"></div>
+        </div>
+        <p class="pizza-interact-hint">← Hover for cheese effect · Click a tab to switch →</p>
+      </div>
+
+      <div class="pizza-info-stack">
+        <div class="pizza-tab-btns" role="tablist">
+          <button class="pizza-tab active" data-pizza="volcano" role="tab" aria-selected="true">Volcano Cheese</button>
+          <button class="pizza-tab" data-pizza="truffle" role="tab" aria-selected="false">Truffle Mushroom</button>
+          <button class="pizza-tab" data-pizza="garden" role="tab" aria-selected="false">Garden Fresh</button>
+          <button class="pizza-tab" data-pizza="bbq" role="tab" aria-selected="false">Smoky BBQ</button>
+        </div>
+        <div class="pizza-detail-card glass-card" id="pizzaDetail">
+          <h3 class="pizza-name" id="pizzaName">Volcano Cheese Pizza</h3>
+          <p class="pizza-desc" id="pizzaDesc">Triple-layered mozzarella, cheddar lava, golden crust — a cheese lover's dream. Every bite erupts with flavor.</p>
+          <div class="pizza-meta">
+            <span class="pizza-tag">🌶 Spicy Available</span>
+            <span class="pizza-tag">🧀 Extra Cheese</span>
+            <span class="pizza-tag">⏱ 20 min</span>
+          </div>
+          <div class="pizza-price-row">
+            <span class="pizza-price" id="pizzaPrice">₹ 349</span>
+            <button class="btn btn-primary btn-sm cart-btn" data-item="Volcano Cheese Pizza" data-price="349">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FEATURED SPECIALS ─── -->
+  <section class="specials-section" id="specials">
+    <div class="section-header">
+      <p class="section-eyebrow">Chef's Choice</p>
+      <h2 class="section-title"><em>Featured</em> Specials</h2>
+    </div>
+    <div class="specials-grid">
+      <article class="special-card glass-card" style="--delay:.0s">
+        <div class="special-img-wrap">
+          <img src="img/pizza_volcano.png" alt="Volcano Cheese Pizza" class="special-real-img" loading="lazy" />
+          <div class="special-img-glow"></div>
+          <div class="special-badge">⭐ Chef's Top Pick</div>
+        </div>
+        <div class="special-info">
+          <h3>Volcano Cheese Pizza</h3>
+          <p>Triple cheese lava with crispy golden crust</p>
+          <div class="special-footer">
+            <span class="price">₹ 349</span>
+            <button class="btn btn-primary btn-sm cart-btn" data-item="Volcano Cheese Pizza" data-price="349">Order</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="special-card glass-card" style="--delay:.1s">
+        <div class="special-img-wrap">
+          <img src="img/pizza_truffle.png" alt="Truffle Mushroom Pizza" class="special-real-img" loading="lazy" />
+          <div class="special-img-glow"></div>
+          <div class="special-badge">🍄 Premium</div>
+        </div>
+        <div class="special-info">
+          <h3>Truffle Mushroom Pizza</h3>
+          <p>Wild mushrooms, truffle oil, parmesan snow</p>
+          <div class="special-footer">
+            <span class="price">₹ 429</span>
+            <button class="btn btn-primary btn-sm cart-btn" data-item="Truffle Mushroom Pizza" data-price="429">Order</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="special-card glass-card" style="--delay:.2s">
+        <div class="special-img-wrap">
+          <img src="img/mango_juice.png" alt="Mango Fresh Juice" class="special-real-img" loading="lazy" />
+          <div class="special-img-glow"></div>
+          <div class="special-badge">🥭 Fresh Daily</div>
+        </div>
+        <div class="special-info">
+          <h3>Mango Fresh Juice</h3>
+          <p>100% Alphonso mango, no added sugar</p>
+          <div class="special-footer">
+            <span class="price">₹ 149</span>
+            <button class="btn btn-primary btn-sm cart-btn" data-item="Mango Fresh Juice" data-price="149">Order</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="special-card glass-card" style="--delay:.3s">
+        <div class="special-img-wrap">
+          <img src="img/strawberry.png" alt="Strawberry Smoothie" class="special-real-img" loading="lazy" />
+          <div class="special-img-glow"></div>
+          <div class="special-badge">🍓 Fan Favourite</div>
+        </div>
+        <div class="special-info">
+          <h3>Strawberry Smoothie</h3>
+          <p>Fresh strawberries, yogurt, honey drizzle</p>
+          <div class="special-footer">
+            <span class="price">₹ 179</span>
+            <button class="btn btn-primary btn-sm cart-btn" data-item="Strawberry Smoothie" data-price="179">Order</button>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ─── JUICE SECTION ─── -->
+  <section class="drinks-section" id="drinks">
+    <div class="section-header">
+      <p class="section-eyebrow">Fresh &amp; Alive</p>
+      <h2 class="section-title">Handcrafted <em>Juice Bar</em></h2>
+      <p class="section-sub">Real fruits, swirling liquids, floating ice — every glass tells a story.</p>
+    </div>
+
+    <div class="drinks-grid">
+      <article class="drink-card glass-card" data-drink="mango">
+        <div class="drink-img-wrap">
+          <img src="img/mango_juice.png" alt="Mango Juice" class="drink-real-img" loading="lazy" />
+          <div class="drink-shimmer"></div>
+          <div class="fruit-orbit" id="orbitMango" aria-hidden="true"></div>
+        </div>
+        <h3>Mango Juice</h3>
+        <p>Tropical Alphonso blend with mango cubes</p>
+        <div class="drink-footer">
+          <span class="price">₹ 149</span>
+          <button class="btn btn-primary btn-sm cart-btn" data-item="Mango Juice" data-price="149">Add</button>
+        </div>
+      </article>
+
+      <article class="drink-card glass-card" data-drink="strawberry">
+        <div class="drink-img-wrap">
+          <img src="img/strawberry.png" alt="Strawberry Smoothie" class="drink-real-img" loading="lazy" />
+          <div class="drink-shimmer"></div>
+          <div class="fruit-orbit" id="orbitStraw" aria-hidden="true"></div>
+        </div>
+        <h3>Strawberry Smoothie</h3>
+        <p>Fresh berries, yogurt, honey &amp; rose petals</p>
+        <div class="drink-footer">
+          <span class="price">₹ 179</span>
+          <button class="btn btn-primary btn-sm cart-btn" data-item="Strawberry Smoothie" data-price="179">Add</button>
+        </div>
+      </article>
+
+      <article class="drink-card glass-card" data-drink="orange">
+        <div class="drink-img-wrap">
+          <img src="img/orange_juice.png" alt="Orange Juice" class="drink-real-img" loading="lazy" />
+          <div class="drink-shimmer"></div>
+          <div class="fruit-orbit" id="orbitOrange" aria-hidden="true"></div>
+        </div>
+        <h3>Orange Juice</h3>
+        <p>Cold-pressed Valencia oranges, extra pulp</p>
+        <div class="drink-footer">
+          <span class="price">₹ 129</span>
+          <button class="btn btn-primary btn-sm cart-btn" data-item="Orange Juice" data-price="129">Add</button>
+        </div>
+      </article>
+
+      <article class="drink-card glass-card" data-drink="blueberry">
+        <div class="drink-img-wrap">
+          <img src="img/blueberry.png" alt="Blueberry Soda" class="drink-real-img" loading="lazy" />
+          <div class="drink-shimmer"></div>
+          <div class="fruit-orbit" id="orbitBlue" aria-hidden="true"></div>
+        </div>
+        <h3>Blueberry Soda</h3>
+        <p>Sparkling blueberry with lavender syrup</p>
+        <div class="drink-footer">
+          <span class="price">₹ 159</span>
+          <button class="btn btn-primary btn-sm cart-btn" data-item="Blueberry Soda" data-price="159">Add</button>
+        </div>
+      </article>
+
+      <article class="drink-card glass-card" data-drink="matcha">
+        <div class="drink-img-wrap">
+          <img src="img/mango_juice.png" alt="Matcha Latte" class="drink-real-img" loading="lazy" style="filter:hue-rotate(80deg) saturate(1.4)" />
+          <div class="drink-shimmer"></div>
+          <div class="fruit-orbit" id="orbitMatcha" aria-hidden="true"></div>
+        </div>
+        <h3>Matcha Latte</h3>
+        <p>Ceremonial grade matcha, oat milk foam</p>
+        <div class="drink-footer">
+          <span class="price">₹ 199</span>
+          <button class="btn btn-primary btn-sm cart-btn" data-item="Matcha Latte" data-price="199">Add</button>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ─── FULL MENU GRID ─── -->
+  <section class="menu-section" id="menu">
+    <div class="section-header">
+      <p class="section-eyebrow">Explore Everything</p>
+      <h2 class="section-title">The <em>Menu</em></h2>
+    </div>
+
+    <div class="menu-tabs" role="tablist">
+      <button class="menu-tab active" data-cat="all" role="tab">All</button>
+      <button class="menu-tab" data-cat="pizza" role="tab">🍕 Pizza</button>
+      <button class="menu-tab" data-cat="drinks" role="tab">🥤 Drinks</button>
+      <button class="menu-tab" data-cat="juices" role="tab">🍹 Juices</button>
+      <button class="menu-tab" data-cat="desserts" role="tab">🍰 Desserts</button>
+    </div>
+
+    <div class="menu-grid" id="menuGrid">
+      <!-- Populated by JS -->
+    </div>
+  </section>
+
+  <!-- ─── ORDER SECTION ─── -->
+  <section class="order-section" id="order">
+    <div class="order-inner glass-card">
+      <div class="order-art" aria-hidden="true">
+        <canvas id="orderCanvas" width="360" height="260"></canvas>
+      </div>
+      <div class="order-content">
+        <p class="section-eyebrow">Ready to Indulge?</p>
+        <h2 class="section-title">Order Your <em>Dream Plate</em></h2>
+        <p>Everything freshly made. Delivered warm, vibrant, and picture-perfect.</p>
+        <div class="order-pills">
+          <span class="pill">🛵 Fast Delivery</span>
+          <span class="pill">♻️ Eco Packaging</span>
+          <span class="pill">⭐ 4.9 Rating</span>
+        </div>
+        <a href="#menu" class="btn btn-primary btn-lg">Browse &amp; Order</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ─── -->
+  <footer class="footer" id="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="#" class="logo" aria-label="Prism Café Home">
+          <span class="logo-prism">Prism</span><span class="logo-cafe">Café</span>
+        </a>
+        <p>A dreamy space where every dish<br>is a work of edible art.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram">◈</a>
+          <a href="#" aria-label="Pinterest">✿</a>
+          <a href="#" aria-label="Twitter">◉</a>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <h4>Menu</h4>
+        <ul>
+          <li><a href="#menu">Pizzas</a></li>
+          <li><a href="#drinks">Juices</a></li>
+          <li><a href="#menu">Desserts</a></li>
+          <li><a href="#specials">Specials</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">FAQs</a></li>
+          <li><a href="#">Reservations</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-newsletter">
+        <h4>Stay in the Loop</h4>
+        <p>Get exclusive deals and new menu drops.</p>
+        <form class="newsletter-form" id="newsletterForm" onsubmit="return false">
+          <input type="email" placeholder="your@email.com" aria-label="Email for newsletter" id="newsEmail" required />
+          <button type="submit" class="btn btn-primary glow-btn" id="newsletterBtn">Subscribe</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Prism Café. Crafted with love &amp; cheese. 🧀</p>
+    </div>
+  </footer>
+
+  <!-- ─── CART TOAST ─── -->
+  <div class="cart-toast" id="cartToast" aria-live="polite"></div>
+
+  <!-- ─── CART BADGE ─── -->
+  <div class="cart-fab" id="cartFab" aria-label="Cart">
+    <span class="cart-icon">🛒</span>
+    <span class="cart-count" id="cartCount">0</span>
+  </div>
+
+  <script src="pizza.js"></script>
+  <script src="drinks.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
